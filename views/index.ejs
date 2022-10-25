@@ -1,0 +1,77 @@
+<%- include('./layouts/header.ejs'); %> 
+            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">The perfect way to track the location of your device</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Actually we have the blessing of horus to be able to find the exact location of your device in this or another life</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#">About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="images/Logo.png" alt="..." /></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Features section-->
+            <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-13"><h2 class="fw-bolder mb-2" align ="center" >Tracking Process</h2>
+                            <table class="table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th align="center">Vehicle ID</th>
+                                        <th align="center">Latitude</th>
+                                        <th align="center">Longitude</th>
+                                        <th align="center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tparameters">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- Map section-->
+            <div class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-13 col-xl-16">
+                            <div class="text-center">
+                                <div class="fs-10 mb-10 fst-italic" >Vehicle Tracking</div>
+                                <div class="d-flex align-items-center justify-content-center" id="map"></div>
+                                <script src="javascripts/map.js"> </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Horus GPS 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                    <div class="col-auto"><div class="small m-0 text-white">With the support of  David Miller </div></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,2 @@
+Almacena las funciones que se van a ejecutar en el CRUD o la base de datos
+que va a ser llamadas al controlador 

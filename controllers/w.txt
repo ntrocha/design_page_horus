@@ -1,0 +1,5 @@
+Esta Carpeta almacena las funciones que trabajan para mostrar
+la vista de la pagina (conexion entre la rutas y el html)
+
+En las funciones se pueden determinar las conexiones a la base de datos
+y va a conectarse con el modelo(tiene las funciones en sentencia SQL)

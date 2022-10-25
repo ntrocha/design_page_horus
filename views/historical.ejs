@@ -1,0 +1,136 @@
+<%- include('./layouts/header.ejs'); %> 
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-8">
+                                <h1 class="fw-bolder mb-3">Historical </h1>
+                                <p class="lead fw-normal text-muted mb-4">To now a specific track in a period of time. Please select a start and end date: </p>
+                                <iframe name="dummyframe" id="dummyframe" style="display: none" ></iframe>
+                                
+                                
+                                <div class="form-check form-switch" style="display: flex; justify-content: space-around">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Enable second vehicle</label>
+                                </div>
+                                
+                                <div class="forms " style="display: flex; justify-content: space-around;">
+
+
+                                    <h5>First Vehicle:</h3>
+                                    <div class="form-group">
+                                    </br> 
+                                        <label for="my-input">Since</label>
+                                        <input id="Since" class="dateInputs" type="datetime-local" name="Since">
+                                    </br> 
+                                    </div>
+                        
+                                    <div class="form-group">
+                                       </br> 
+                                        <label for="my-input">Until</label>
+                                        <input id="Until" class="dateInputs" type="datetime-local" name="Until">
+                                       </br> 
+                                    </div>
+                                </div>
+                            </br> 
+                                <div class="forms " style="display: flex; justify-content: space-around;">    
+                                    <h5>Second Vehicle:</h5>
+
+                                    <div class="form-group">
+                                    </br> 
+                                        <label for="my-input">Since</label>
+                                        <input id="Since2" class="dateInputs" type="datetime-local" name="Since2">
+                                    </br> 
+                                    </div>
+                        
+                                    <div class="form-group">
+                                       </br> 
+                                        <label for="my-input">Until</label>
+                                        <input id="Until2" class="dateInputs" type="datetime-local" name="Until2">
+                                       </br> 
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <input style="margin-top : 60px" class="submitInput" type="submit" value="Get an Interval" onclick=getParams()>
+                                    </div>    
+                                    <br> <br>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About section one-->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <h2 class="fw-bolder mb-2" align ="center" >Historical Time</h2>
+                </br>
+                    <div class="row gx-5 align-items-center" id="map2"></div>
+                </div>
+                <div class="container px-5 my-5" style="display: none" id="historicaltable">
+                    <div class="row gx-3">
+                        <div class="col-lg-13"><h2 class="fw-bolder mb-2" align ="center" >Historical Location</h2>
+                            <div class="fs-10 mb-10 fst-italic" >The vehicle 1 was in the position...</div>
+                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Latitude:</h5>
+                            <div align ="center">
+                            <input type="text" placeholder="LatInputs" id="Lat" align="center">
+                            </div>
+                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Longitude:</h5>
+                            <div align ="center">
+                            <input type="text" placeholder="LngInputs" id="Lng" align="center">
+                            <div class="fs-10 mb-10 fst-italic" >The vehicle 2 was in the position...</div>
+                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Latitude:</h5>
+                            <div align ="center">
+                            <input type="text" placeholder="LatInputs" id="Lat2" align="center">
+                            </div>
+                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Longitude:</h5>
+                            <div align ="center">
+                            <input type="text" placeholder="LngInputs" id="Lng2" align="center"> 
+                        </div>
+                        <div align="center">
+                            <input style="margin-top : 60px" class="submitInput" type="submit" value="Get a table" onclick=tableParams()>  
+                        </div>    
+                            <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded" >
+                              <table class="table table-bordered table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th align="center">Identification</th>
+                                        <th align="center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tparameters">
+                                </tbody>
+                              </table>
+                            </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Horus GPS 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                    <div class="col-auto"><div class="small m-0 text-white">With the support of  David Miller </div></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/javascripts/map2.js"></script>
+        <script type="application/javascript" src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,2 @@
+Muestra la conexion a la base de datos y dice si fue exitosa
+o hubo algun error.
