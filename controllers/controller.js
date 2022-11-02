@@ -24,6 +24,13 @@ module.exports = {
         });
     },
 
+    indexRead3 : function(req, res, next) {
+        func.obtain3(con, function(err, datos){
+            console.log(datos);
+            res.json(datos);
+        });
+    },
+
     historical : function(req, res, next) {
 
         func.obtener(con, function(err, datos){

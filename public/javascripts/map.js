@@ -9,6 +9,7 @@ var blueicon = L.icon({
 
 var marker = L.marker([51.5, -0.09], {icon: blueicon});
 var marker2 = L.marker([51.5, -0.09], {icon: redicon});
+var marker3 = L.marker([51.5, -0.09]);
 var map = L.map('map').setView([10.963889, -74.796387], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -18,8 +19,12 @@ attribution: '© OpenStreetMap'
 
 marker.addTo(map);
 marker2.addTo(map);
+marker3.addTo(map);
+var rep = 0;
+var last = 0;
 var url = "/read"
 var url2 = "/read2"
+var url3 = "/read3"
 var aplicacion = new function(){
     this.tparameters = document.getElementById("tparameters");
     var plyln = [];
@@ -33,7 +38,7 @@ var aplicacion = new function(){
         const response  = await fetch(url)
         const json = await response.json();
 
-        console.log(json);
+        //console.log(json);
         (json).map(
             function (parameter,index, array){
                 let dt = (parameter.Time)
@@ -55,8 +60,40 @@ var aplicacion = new function(){
                         
                 plyln.push(latlong);
                 lineField = L.polyline(plyln, {color: 'blue'}).addTo(map);
+                
+
+                 
+
             }
+
         );
+    // SLEEP MARKER:
+        const response3  = await fetch(url3)
+        const json3 = await response3.json();
+                    
+        console.log(json3);
+            (json3).map(
+                function (parameter,index, array){
+                    let sleep = (parameter.sleep)
+
+                        if ( 1 >= sleep > 0 && rep == 0){
+                            last = sleep;
+                            rep = 1;
+                            //marker3.setLatLng(latlong);
+                            //marker3.on('click', function(e) {
+                                alert("Drowsiness detected")
+                                //marker3.bindPopup("Drowsiness detected in: " + e.latlng.lat + ", " + e.latlng.lng)
+                            //}); 
+                        } else if (sleep > last){
+                            last = sleep
+                            //marker3.setLatLng(latlong);
+                            //marker3.on('click', function(e) {
+                                alert("Drowsiness detected")
+                                //marker3.bindPopup("Drowsiness detected in: " + e.latlng.lat + ", " + e.latlng.lng)
+                            //}); 
+                        }
+                }
+            );
 
         //VEHICULO #2
         var datos2="";
@@ -83,15 +120,15 @@ var aplicacion = new function(){
                         
                 plyln2.push(latlong2);
                 lineField = L.polyline(plyln2, {color: 'red'}).addTo(map);
+            
             }
+
         );
         
         return this.tparameters.innerHTML=datos,datos2;
     //HASTA AQUI...    
     };
     setInterval(this.Leer, 1000)
-
-
 
 }
 aplicacion.Leer();

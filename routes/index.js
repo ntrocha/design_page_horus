@@ -5,6 +5,6 @@ const controller = require("../controllers/controller");
 router.get('/', controller.index);
 router.get('/read', controller.indexRead);
 router.get('/read2', controller.indexRead2);
-
+router.get('/read3', controller.indexRead3);
 module.exports = router;
 
