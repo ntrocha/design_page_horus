@@ -9,7 +9,7 @@ var blueicon = L.icon({
 
 var marker = L.marker([51.5, -0.09], {icon: blueicon});
 var marker2 = L.marker([51.5, -0.09], {icon: redicon});
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map').setView([10.963889, -74.796387], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 maxZoom: 19,
@@ -47,7 +47,10 @@ var aplicacion = new function(){
                 datos+="</tr>";
                 var latlong = [Number(parameter.Latitude), Number(parameter.Longitude)]
                 marker.setLatLng(latlong);
-                map.setView(latlong);
+                
+                if (plyln.length == 0){
+                    map.setView(latlong);
+                }
             //Polilinea:
                         
                 plyln.push(latlong);

@@ -10,15 +10,23 @@
                                 <iframe name="dummyframe" id="dummyframe" style="display: none" ></iframe>
                                 
                                 
-                                <div class="form-check form-switch" style="display: flex; justify-content: space-around">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Enable second vehicle</label>
-                                </div>
+                                <form action="" target="_blank">
+                                    <p>
+                                  
+                                      Select Vehicles:                                  
+                                      <select name="car-id" id="car-id">                                  
+                                        <option value="1">QID-550</option>                                  
+                                        <option value="2">UUZ-745</option>
+                                        <option value="3">All Vehicles</option>
+                                      </select>
+                                  
+                                    </p> 
+                                </form>
                                 
                                 <div class="forms " style="display: flex; justify-content: space-around;">
 
 
-                                    <h5>First Vehicle:</h3>
+                                    <h5>Date Information</h3>
                                     <div class="form-group">
                                     </br> 
                                         <label for="my-input">Since</label>
@@ -34,23 +42,6 @@
                                     </div>
                                 </div>
                             </br> 
-                                <div class="forms " style="display: flex; justify-content: space-around;">    
-                                    <h5>Second Vehicle:</h5>
-
-                                    <div class="form-group">
-                                    </br> 
-                                        <label for="my-input">Since</label>
-                                        <input id="Since2" class="dateInputs" type="datetime-local" name="Since2">
-                                    </br> 
-                                    </div>
-                        
-                                    <div class="form-group">
-                                       </br> 
-                                        <label for="my-input">Until</label>
-                                        <input id="Until2" class="dateInputs" type="datetime-local" name="Until2">
-                                       </br> 
-                                    </div>
-                                </div>
                                 <div align="center">
                                     <input style="margin-top : 60px" class="submitInput" type="submit" value="Get an Interval" onclick=getParams()>
                                     </div>    
@@ -70,27 +61,7 @@
                 </div>
                 <div class="container px-5 my-5" style="display: none" id="historicaltable">
                     <div class="row gx-3">
-                        <div class="col-lg-13"><h2 class="fw-bolder mb-2" align ="center" >Historical Location</h2>
-                            <div class="fs-10 mb-10 fst-italic" >The vehicle 1 was in the position...</div>
-                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Latitude:</h5>
-                            <div align ="center">
-                            <input type="text" placeholder="LatInputs" id="Lat" align="center">
-                            </div>
-                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Longitude:</h5>
-                            <div align ="center">
-                            <input type="text" placeholder="LngInputs" id="Lng" align="center">
-                            <div class="fs-10 mb-10 fst-italic" >The vehicle 2 was in the position...</div>
-                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Latitude:</h5>
-                            <div align ="center">
-                            <input type="text" placeholder="LatInputs" id="Lat2" align="center">
-                            </div>
-                            <div class="col-lg-13"><h5 class="fw-bolder mb-2" align ="center" >Longitude:</h5>
-                            <div align ="center">
-                            <input type="text" placeholder="LngInputs" id="Lng2" align="center"> 
-                        </div>
-                        <div align="center">
-                            <input style="margin-top : 60px" class="submitInput" type="submit" value="Get a table" onclick=tableParams()>  
-                        </div>    
+                        <h2 class="fw-bolder mb-2" align ="center" >Historical Location</h2>  
                             <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded" >
                               <table class="table table-bordered table-striped">
                                 <thead class="table-dark">

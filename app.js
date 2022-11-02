@@ -68,6 +68,28 @@ app.get("/datajson2", async (req, res) => {
   })
 });
 
+app.get("/datajs", async (req, res) => {
+  const Lat = parseFloat(req.query.Lat);
+  const Lng = parseFloat(req.query.Lng);
+
+  console.log("Prueba 1");
+
+  const query2 = `SELECT * FROM GPS_DATA WHERE Latitude BETWEEN ${Lat} AND ${
+    Lat + 0.034
+    } AND Longitude BETWEEN ${Lng} AND ${Lng + 0.034}`;
+
+  console.log(query2);
+  con.query(query2,(err, result) => {
+    if (!err) {
+      console.log(result);
+      return res.send(result).status(200);
+    } else {
+      console.log(`Ha ocurrido el siguiente ${err}`);
+      return res.status(500);
+    }
+  })
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
